@@ -1,0 +1,7 @@
+streamlit
+pandas
+plotly
+requests
+yfinance
+beautifulsoup4
+lxml
