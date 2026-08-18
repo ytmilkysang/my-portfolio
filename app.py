@@ -35,6 +35,10 @@ def get_exchange_rate():
         return 1350.0
 
 def get_current_price(ticker):
+    # [핵심 추가] 현금, 예수금, CASH인 경우 현재가를 무조건 1로 고정하여 평가금액이 수량 그대로 나오게 함
+    if ticker in ['현금', '예수금', 'CASH']:
+        return 1.0
+        
     # 1. 가상화폐 (업비트)
     if ticker in ['비트코인', 'BTC', '이더리움', 'ETH']:
         upbit_tickers = {'비트코인': 'KRW-BTC', 'BTC': 'KRW-BTC', '이더리움': 'KRW-ETH', 'ETH': 'KRW-ETH'}
